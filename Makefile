@@ -2,7 +2,7 @@
 # Helpers to build modules out of linux-next based LoRa patch queue
 #
 
-KDIR ?= /lib/modules/`uname -r`/build
+KDIR ?= $$PWD/linux
 
 SDIR ?= $$PWD/linux
 IDIR = $$PWD/include
@@ -41,10 +41,10 @@ all: test
 		$(MFLAGS_KCONFIG) \
 		KBUILD_EXTRA_SYMBOLS="$(SDIR)/net/lora/Module.symvers $(SDIR)/net/fsk/Module.symvers" \
 		CFLAGS_MODULE="-I$(IDIR) -DCONFIG_FSK -DCONFIG_LORA_SX125X_CON"
-	$(MAKE) -C $(KDIR) M=$(SDIR)/drivers/net/lorawan \
-		$(MFLAGS_KCONFIG) \
-		KBUILD_EXTRA_SYMBOLS=$(SDIR)/net/lora/Module.symvers \
-		CFLAGS_MODULE=-I$(IDIR)
+#	$(MAKE) -C $(KDIR) M=$(SDIR)/drivers/net/lorawan \
+#		$(MFLAGS_KCONFIG) \
+#		KBUILD_EXTRA_SYMBOLS=$(SDIR)/net/lora/Module.symvers \
+#		CFLAGS_MODULE=-I$(IDIR)
 
 fsk:
 	$(MAKE) -C $(KDIR) M=$(SDIR)/net/fsk \
