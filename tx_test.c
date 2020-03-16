@@ -20,6 +20,10 @@
 #define PF_LORA AF_LORA
 #endif
 
+
+#define LORA_MTU	255
+
+
 #define MSG(args...) fprintf(stderr, args) /* message that is destined to the user */
 
 /* describe command line options */
@@ -59,7 +63,7 @@ int main(int argc, char **argv)
 					usage();
 					return EXIT_FAILURE;
 				} else {
-					freq = (uint32_t)((xd*1e6) + 0.5); /* .5 Hz offset to get rounding instead of truncating */
+					freq = (unsigned int)((xd*1e6) + 0.5); /* .5 Hz offset to get rounding instead of truncating */
 				}
 				break;
 			case 'b':
