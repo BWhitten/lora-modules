@@ -80,6 +80,9 @@ clean-fsk:
 clean-enocean:
 	$(MAKE) -C $(KDIR) M=$(SDIR)/drivers/net/enocean clean
 
+txtest: tx_test.c
+	$(CC) -o tx_test tx_test.c
+
 test: test.c
 	$(CC) -o test test.c
 
