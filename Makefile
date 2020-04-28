@@ -81,6 +81,10 @@ clean-enocean:
 
 txtest: tx_test.c
 	$(CC) -o tx_test tx_test.c
+rxtest: rx_test.c
+	$(CC) -o rx_test rx_test.c
+rxtestpkt: rx_test_packet.c
+	$(CC) -o rx_test_packet rx_test_packet.c
 
 test: test.c
 	$(CC) -o test test.c
