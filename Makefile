@@ -2,7 +2,7 @@
 # Helpers to build modules out of linux-next based LoRa patch queue
 #
 
-KDIR ?= $$PWD/linux
+KDIR ?= ../linux-rpi
 
 SDIR ?= $$PWD/linux
 IDIR = $$PWD/include
