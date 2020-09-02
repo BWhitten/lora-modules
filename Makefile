@@ -41,11 +41,11 @@ all: test
 	$(MAKE) -C $(KDIR) M=$(SDIR)/drivers/net/lora \
 		$(MFLAGS_KCONFIG) \
 		KBUILD_EXTRA_SYMBOLS="$(SDIR)/net/lora/Module.symvers $(SDIR)/net/fsk/Module.symvers" \
-		CFLAGS_MODULE="-I$(IDIR) -DCONFIG_FSK -DCONFIG_LORA_SX125X_CON -DCONFIG_LORA_SX128X_SPI"
-#	$(MAKE) -C $(KDIR) M=$(SDIR)/drivers/net/lorawan \
-#		$(MFLAGS_KCONFIG) \
-#		KBUILD_EXTRA_SYMBOLS=$(SDIR)/net/lora/Module.symvers \
-#		CFLAGS_MODULE=-I$(IDIR)
+		CFLAGS_MODULE="-I$(IDIR) -DCONFIG_FSK -DCONFIG_LORA_SX125X_CON"
+	$(MAKE) -C $(KDIR) M=$(SDIR)/drivers/net/lorawan \
+		$(MFLAGS_KCONFIG) \
+		KBUILD_EXTRA_SYMBOLS=$(SDIR)/net/lora/Module.symvers \
+		CFLAGS_MODULE=-I$(IDIR)
 
 fsk:
 	$(MAKE) -C $(KDIR) M=$(SDIR)/net/fsk \
