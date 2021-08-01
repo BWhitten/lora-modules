@@ -32,9 +32,9 @@ MFLAGS_KCONFIG += CONFIG_FSK_SI443X=m
 
 all: test
 #	$(MAKE) -C $(KDIR) M=$$PWD
-	$(MAKE) -C $(KDIR) M=$(SDIR)/net/fsk \
-		$(MFLAGS_KCONFIG) \
-		CFLAGS_MODULE=-I$(IDIR)
+#	$(MAKE) -C $(KDIR) M=$(SDIR)/net/fsk \
+#		$(MFLAGS_KCONFIG) \
+#		CFLAGS_MODULE=-I$(IDIR)
 	$(MAKE) -C $(KDIR) M=$(SDIR)/net/lora \
 		$(MFLAGS_KCONFIG) \
 		CFLAGS_MODULE=-I$(IDIR)
